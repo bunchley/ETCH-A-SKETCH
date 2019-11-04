@@ -1,4 +1,10 @@
-.row{
-    display: grid;
-    grid-template-columns: ;
+.grid-container {
+  float: none;
+}
+
+.row {
+  float: left;
+  width: 1/16%;
+}
+.cell {
 }
