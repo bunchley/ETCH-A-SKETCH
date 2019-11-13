@@ -1,5 +1,6 @@
 let gridCells;
 const gridContainer = document.querySelector(".grid-container");
+const clearButton = document.querySelector(".clear-button");
 
 function buildGrid(gridSize) {
   let gridArea = gridSize * gridSize;
@@ -26,7 +27,11 @@ buildGrid(50);
 gridCells = document.querySelectorAll(".cell");
 
 function colorCellBlack() {
-  document
-    .getElementById(event.target.id)
-    .setAttribute("style", "background-color:black");
+  document.getElementById(event.target.id).setAttribute("class", "color-black");
+}
+clearButton.addEventListener("click", clearCellColor);
+function clearCellColor() {
+  gridCells.forEach(cell => {
+    cell.classList.remove("color-black");
+  });
 }
