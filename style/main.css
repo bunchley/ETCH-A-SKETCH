@@ -1,5 +1,4 @@
 .color {
-  background-color: grey;
 }
 h1 {
   text-align: center;
@@ -10,10 +9,10 @@ h1 {
 
 .grid-container {
   display: grid;
-  height: 300px;
-  width: 300px;
-  padding: 10px;
-  border-color: black;
+  height: 400px;
+  width: 400px;
+  border: solid black 2px;
+  background-color: whitesmoke;
 }
 
 .cell {
@@ -29,5 +28,10 @@ body {
   align-items: center;
 }
 .color-black {
+  background-color: black;
+  opacity: 1;
+}
+
+.shade-color {
   background-color: black;
 }
