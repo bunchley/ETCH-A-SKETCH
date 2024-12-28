@@ -9,16 +9,18 @@ h1 {
 }
 
 .grid-container {
-  display: grid;
+  display: flex;
   height: 300px;
   width: 300px;
-  padding: 10px;
   border-color: black;
+  border-style: solid;
 }
 
-.cell {
+.row {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 body {
@@ -28,6 +30,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-.color-black {
-  background-color: black;
+.colored {
+  background-color: pink;
+}
+
+.shader:hover {
+  filter: brightness(25%);
 }
