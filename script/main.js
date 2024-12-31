@@ -11,7 +11,6 @@ function createGrid(gridSize) {
 
     for (j = 0; j < gridSize; j++) {
       let cell = document.createElement("div");
-      cell.className = "cell";
       cell.className = `row ${j}`;
       cell.textContent = `  `;
       cell.addEventListener("mouseover", addColor);
@@ -20,9 +19,21 @@ function createGrid(gridSize) {
     }
   }
 }
+function setRandomColor() {
+  let color = "#";
+  let colorList = "1234567890ABCDEF";
+  for (i = 0; i < 6; i++) {
+    color += colorList[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 function addColor(event) {
-  event.target.classList.add("colored");
+  if (!this.classList.contains("colored")) {
+    this.classList.add("colored");
+    this.style.backgroundColor = setRandomColor();
+    this.style.opacity = 0.1;
+  }
 }
 
 resetButton.addEventListener("click", (event) => {
