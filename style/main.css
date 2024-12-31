@@ -9,15 +9,20 @@ h1 {
   display: flex;
   border-color: black;
   border-style: solid;
+  height: 650px;
+  width: 650px;
+  flex-wrap: wrap;
 }
-
+.col {
+  height: 650px;
+}
 .row {
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  min-height: 20px;
-  min-width: 20px;
+  min-height: 1px;
+  min-width: 1px;
   border: solid;
 }
 

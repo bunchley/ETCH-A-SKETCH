@@ -4,19 +4,20 @@ const resetButton = document.querySelector(".reset-button");
 let count = 1;
 
 function createGrid(gridSize) {
-  for (i = 0; i < gridSize; i++) {
-    let col = document.createElement("div");
-    col.className = `col ${i}`;
-    gridPlace.appendChild(col);
+  // for (i = 0; i < gridSize; i++) {
+  //   let col = document.createElement("div");
+  //   col.className = `col ${i}`;
+  //   gridPlace.appendChild(col);
 
-    for (j = 0; j < gridSize; j++) {
-      let cell = document.createElement("div");
-      cell.className = `row ${j}`;
-      cell.textContent = `  `;
-      cell.addEventListener("mouseover", addColor);
-      // cell.addEventListener("mouseover");
-      col.appendChild(cell);
-    }
+  for (j = 0; j < gridSize * gridSize; j++) {
+    let cellSize = 100 / gridSize + "%";
+    let cell = document.createElement("div");
+    cell.className = `box`;
+    cell.textContent = `  `;
+    cell.style.width = cellSize;
+    cell.style.height = cellSize;
+    cell.addEventListener("mouseover", addColor);
+    gridPlace.appendChild(cell);
   }
 }
 function setRandomColor() {
@@ -28,11 +29,18 @@ function setRandomColor() {
   return color;
 }
 
-function addColor(event) {
+function addColor() {
   if (!this.classList.contains("colored")) {
     this.classList.add("colored");
     this.style.backgroundColor = setRandomColor();
     this.style.opacity = 0.1;
+  } else {
+    let opacity = parseFloat(this.style.opacity) || 0;
+    if (opacity < 1) {
+      opacity += 0.1;
+      this.style.opacity = opacity;
+    }
+    this.style;
   }
 }
 
